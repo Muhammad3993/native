@@ -6,7 +6,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function SplashScreen({ navigation }) {
 
   const [fontsLoaded] = useFonts({
-    "Syncopate-Bold": require("../../assets/fonts/Syncopate-Bold.ttf"),
+    "Syncopate-Bold": require("../../assets/fonts/Syncopate-Bold.ttf")
   });
 
   if (!fontsLoaded) {

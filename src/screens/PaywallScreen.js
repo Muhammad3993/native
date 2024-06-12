@@ -2,6 +2,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgXml } from 'react-native-svg';
+import Svg, { Text as SvgText, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 
 
 const xml = `<svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -42,6 +43,22 @@ const xml1 = `<svg width="100%" height="260px" id="Layer_1" data-name="Layer 1" 
                 <path class="cls-1" d="M461.2,250.3c4.1,0,6.7,3,5.6,7-1,3.6-2.1,7.1-5.8,9-.9.5-1.4,1.4-2.2,2-1.4,1.1-3.3,1.1-4.8,0-1.5-1-1.5-2.4,0-3.4,1-.7,2.1-1.4,3.2-2.1,1-.7,1-1.3.1-2-.2-.2-.5-.3-.7-.5-2.2-1.8-3.1-4.2-2.1-6.7.8-2.2,2.8-3.1,5-3.4h1.7,0Z" fill="#ED217C"/>
             </svg>`
 
+const GradientText = ({ text, style }) => {
+  return (
+    <Svg height="60" width="300">
+      <Defs>
+        <SvgLinearGradient id="grad" x1="0" y1="0" x2="100%" y2="0">
+          <Stop offset="1%" stopColor="#FFFFFF" stopOpacity="1" />
+          <Stop offset="100%" stopColor="#46B1C9" stopOpacity="1" />
+        </SvgLinearGradient>
+      </Defs>
+      <SvgText fill="url(#grad)" fontSize="30" fontWeight="bold" x="50%" y="50%" textAnchor="middle">
+        {text}
+      </SvgText>
+    </Svg>
+  );
+};
+
 export default function PaywallScreen({navigation}) {
   return (
     <View style={styles.container}>
@@ -67,10 +84,10 @@ export default function PaywallScreen({navigation}) {
             >
               <Text style={styles.paywallEndTextBtnt}>Rizz God</Text>
             </LinearGradient>
-            <Text style={styles.paywallEndText}>Elevate Your Game</Text>
+            <GradientText text="Elevate Your Game" style={styles.paywallEndText} />
             <TouchableOpacity style={styles.paywallEndBtn} onPress={() => navigation.navigate('Home')}>
-                    <Text style={styles.paywallEndBtnText}>Unlock Free Trial</Text>
-                </TouchableOpacity>
+              <Text style={styles.paywallEndBtnText}>Unlock Free Trial</Text>
+            </TouchableOpacity>
             <Text style={styles.paywallEndLtext}>risk-free trial then $8.67/week</Text>
         </TouchableOpacity>
     </View>
@@ -152,7 +169,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#00A676",
     borderRadius: 50,
     padding: 15,
-    marginTop: 10,
+    marginTop: -10,
     marginBottom: 10,
   },
 
