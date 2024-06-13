@@ -25,6 +25,7 @@ const Upload = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
+        
         <LinearGradient
           colors={["#ED217C", "#040404"]}
           style={styles.content}
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: 20,
     shadowColor: '#fff',
-    shadowOffset: { width: 0, height: 3 },
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 10,
     shadowRadius: 3,
   },
