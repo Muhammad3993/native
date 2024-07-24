@@ -31,12 +31,13 @@ const HomeScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.end}>
-        {/* <TouchableOpacity */}
+        <TouchableOpacity
           style={styles.btn}
           onPress={() => navigation.navigate("Upload")}
         >
           <Text style={styles.btnText}>Upload Screenshot</Text>
         </TouchableOpacity>
+        <Text style={styles.btnText}>Upload Screenshot</Text>
       </View>
     </View>
   );
