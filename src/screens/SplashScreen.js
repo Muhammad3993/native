@@ -1,13 +1,16 @@
 // src/screens/SplashScreen.js
-import { useFonts } from 'expo-font';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function SplashScreen({ navigation }) {
 
-  const [fontsLoaded] = useFonts({
+  // const [fontsLoaded] = useFonts({
+  //   "Syncopate-Bold": require("../../assets/fonts/Syncopate-Bold.ttf")
+  // });
+
+  const [fontsLoaded, setFontsLoaded] = useState({
     "Syncopate-Bold": require("../../assets/fonts/Syncopate-Bold.ttf")
-  });
+  })
 
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
@@ -22,6 +25,7 @@ export default function SplashScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>RizzGPT</Text>
+
     </View>
   );
 }
