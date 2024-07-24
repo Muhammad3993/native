@@ -31,7 +31,7 @@ const HomeScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.end}>
-        <TouchableOpacity
+        {/* <TouchableOpacity */}
           style={styles.btn}
           onPress={() => navigation.navigate("Upload")}
         >
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     width: 270,
-    color: "#fff",
+    color: "#fffff",
     fontSize: 30,
     textAlign: "center",
     marginTop: -20,
