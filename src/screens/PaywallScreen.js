@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgXml } from 'react-native-svg';
 import Svg, { Text as SvgText, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
+import { LinearTextGradient } from 'react-native-text-gradient';
 
 
 const xml = `<svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -88,6 +89,7 @@ export default function PaywallScreen({navigation}) {
             <TouchableOpacity style={styles.paywallEndBtn} onPress={() => navigation.navigate('Home')}>
               <Text style={styles.paywallEndBtnText}>Unlock Free Trial</Text>
             </TouchableOpacity>
+      
             <Text style={styles.paywallEndLtext}>risk-free trial then $8.67/week</Text>
         </TouchableOpacity>
     </View>
